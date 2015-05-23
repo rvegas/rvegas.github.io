@@ -1,3 +1,10 @@
-= test
+= Images
 
-test
+A small collection of cool graphics/comics I've found online.
+
+image::http://imgs.xkcd.com/comics/perl_problems.png[]
+[small]#source: http://xkcd.com[xkcd]#
+
+image::http://i.imgur.com/KGrV41o.png[]
+[small]#author: https://twitter.com/EightballArt/status/515195030546690048[Ryan Sawyer]#
+
