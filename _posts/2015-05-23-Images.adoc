@@ -1,4 +1,5 @@
 = Images
+:hp-tags: comics
 
 A small collection of cool graphics/comics I've found online.
 
