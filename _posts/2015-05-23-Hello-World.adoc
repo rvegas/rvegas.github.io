@@ -1,0 +1,8 @@
+= Hello World
+:hp-tags: hosting, blog, github, hubpress
+
+My name is Ricardo Vegas, I'm a software engineer with lots and lots of curiosity, I'm an enthusiast in new technologies, futurism and general geekdom. I don't have an amazing portfolio but I do like to meddle, hack and learn with anything I work with. So I finally decided to start my own 'Dev Journal', to call it somehow since, I've always wanted to share bits of information and experiences I come accross with when I'm building a new application or simply investigating new tools I find on the internet.
+
+I'm mainly focused on Web Development and I found this really nifty tool to help me set up this site,  it's called link:http://hubpress.io/[HubPress] and it's only a beta still but so far it's doing what it's supposed to do. This page is hosted in link:http://github.com[GitHub] thanks to its Github Pages project. I will give a shotout to my colleague link:http://www.jendrik.me[jpo] for introducing me to all these resources.
+
+Setting everything up was fairly easy and it's well documentend in the repositories. Thanks for reading and good luck!
