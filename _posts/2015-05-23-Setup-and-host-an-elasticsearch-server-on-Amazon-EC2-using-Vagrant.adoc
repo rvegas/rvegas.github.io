@@ -1,4 +1,6 @@
 = Setup and host an elasticsearch server on Amazon EC2 using Vagrant
+:hp-tags: elasticsearch, big data, amazon aws, virtualization
+
 
 Normally I never dedicate time to share experience or knowledge about what I like to do, so here I am trying it out to see how it feels and how it goes, so far so good.
 
