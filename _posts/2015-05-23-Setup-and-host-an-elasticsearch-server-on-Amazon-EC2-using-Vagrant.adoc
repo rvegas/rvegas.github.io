@@ -1,0 +1,58 @@
+= Setup and host an elasticsearch server on Amazon EC2 using Vagrant
+:hp-tags: elasticsearch, big data, amazon aws, virtualization
+
+Normally I never dedicate time to share experience or knowledge about what I like to do, so here I am trying it out to see how it feels and how it goes, so far so good.
+
+== Elasticsearch? Amazon EC2? Vagrant?
+
+Is that too much? I don't know, I've never worked with any of these 3 things enough to say I'm an expert and that I should be writing anything about it. But some weeks ago I enrolled into an App Challenge sponsored by link:http://www.acision.com/[Acision], along with link:https://de.linkedin.com/in/juanernestogarcia/en[Juan Ernesto Garcia] and link:https://ve.linkedin.com/in/jmgarcia2/en[Juan Miguel Garcia] since we had planned to work together in some projects for ages. Anyways, we decided to go along with building an application based on an idea I had some time ago for recommending travel destinations.
+
+- link:http://www.elasticsearch.org/[*Elasticsearch*] is a great tool to store and search documents that is based and designed to work as a RESTful service, it's fast and full of features.
+
+- link:https://aws.amazon.com/ec2/?nc1=f_ls[*Amazon EC2*] is a very cool solution if you want be able to have complete control on the configuration of a hosted server in the cloud (among many other things). Basically it's a service that allows you to throw a virtual machine into the cloud so you can mess around with it all you want.
+
+- link:https://www.vagrantup.com/[*Vagrant*] lets you configure a virtual machine so it boots with a preset of services, tools and special features. This also makes it portable by nature since all it needs is a set of configuration files so you can carry it around places. As a plus, there are services like link:https://puphpet.com/[*PuPHPet*] that help you create configurations in a very simplified yet highly customizable process.
+
+== How to do it?
+
+=== Virtualize it
+
+First go to https://puphpet.com and create a simple virtual machine with any web server you want (you don't really need that but why not?). PuPHPet lets you install a elasticsearch service that will always be running whtn you boot up the virtual machine. Download the configuration files and put them aside to bowl for 20 minutes.
+
+image:http://i.imgur.com/5aQB9U6.png[]
+
+=== Into the cloud
+
+Get a free instance running in Amazon EC2 by going to https://aws.amazon.com/ec2/?nc1=f_ls and clicking in 'Try Amazon EC2 for free' if you have money and want to spend it go ahead and get more space/speed/features but for the small node I needed, a simple 'free tier' instance was enough for me. You will go through a somewhat long process of authenticating, accepting terms and getting some keys and secrets to get rolling. You will then be directed to the AWS console with the EC2 manager active and no instances running. You should then create a portable ssh key to make things easier later.
+
+image:http://i.imgur.com/IzQ79lh.png[]
+
+=== Prepare your environment
+
+Did I mention that I used OS X for all this? Well now it's a good time since you need install vagrant now and run a couple of things in your terminal sorry Windows developers, it was fun for you 3 until now I guess. So, after you've successfully installed vagrant go to the terminal and run:
+
+[source,bash]
+vagrant plugin install vagrant-aws
+vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box
+
+=== Security
+
+As expected of having more than 1 access layer (EC2, ubuntu, elasticsearch) I ran into some security issues due to configuration defaults. But this is easy to go over. You can simply modify the Ubuntu iptables to access all traffic and also create a new security group for your instance and add there the ports you need (elasticsearch uses 9200).
+
+[source,bash]
+iptables -I INPUT -j ACCEPT
+
+image:http://i.imgur.com/HwXEDJw.png[]
+
+== Wrap up
+
+So now there is a server running 24/7 over which I have "complete control" and it was not that hard to set up and also free. I have simply to start storing and searching what I need to move on with the app challenge, which in my case are travel destinations with lots of metadata to be recommended from. Also it's running another set of services that I might cover in the future if I decide to write more.
+
+How long does this take do you ask? Well for me, with not so fast internet connection it was about 2 non-intense but really fun hours.
+
+Well that's it, it was a nice experience writing about this and I might start to like it from now on. I have to thank my beloved wife link:http://de.linkedin.com/in/andreinav/en[Andreina Vargas] for the motivation and help to write this and to you if you read all the way to this paragraph.
+
+_Some helpful sources:_
+
+- http://www.iheavy.com/2014/01/16/how-to-deploy-on-amazon-ec2-with-vagrant/
+- http://aws.amazon.com/documentation/ec2/
