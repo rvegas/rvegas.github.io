@@ -2,3 +2,4 @@
 
 :hp-tags: twitter, kibana, elasticsearch, php
 
+Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I've been
