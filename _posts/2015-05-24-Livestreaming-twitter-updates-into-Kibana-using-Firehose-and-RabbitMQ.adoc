@@ -1,4 +1,4 @@
-# Livestreaming twitter updates into Kibana
+# Livestreaming twitter updates into Kibana using Firehose and RabbitMQ
 
 :hp-tags: twitter, kibana, elasticsearch, php
 
@@ -6,4 +6,4 @@ Last time I wrote a small guide or actually a log of what it took me to build a 
 
 *Kibana* is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many many features just like elasticsearch does.
 
-I decided then to put up a small experiment by connecting 
+I decided then to put up a small experiment by reading *Twitter* status updates and dumping them into a elastic search collection so I could later build some graphs based on the characteristics of the tweets (language, sentiment, place, brand, user, whatever I could get).
