@@ -4,9 +4,12 @@
 
 Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I've been working some more with elasticsearch and discovered link:https://www.elastic.co/products/kibana[Kibana] and wow isn't that something cool!?
 
-*Kibana* is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many many features just like elasticsearch does.
-
 I decided then to put up a small experiment by reading *Twitter* status updates and dumping them into a elastic search collection so I could later build some graphs based on the characteristics of the tweets (language, sentiment, place, brand, user, whatever I could get).
 
 ## Kibana, RabbitMQ, Firehose???
+
+Ok I think it's a good idea to explain the tools and technologies I used during the experiment. They're pretty well known and quite easy to setup and understand.
+
+
+*Kibana* is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many many features just like elasticsearch does.
 
