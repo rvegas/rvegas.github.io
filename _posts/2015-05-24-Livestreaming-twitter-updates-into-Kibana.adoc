@@ -2,4 +2,8 @@
 
 :hp-tags: twitter, kibana, elasticsearch, php
 
-Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I've been
+Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I've been working some more with elasticsearch and discovered link:https://www.elastic.co/products/kibana[Kibana] and wow isn't that something cool!?
+
+*Kibana* is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many many features just like elasticsearch does.
+
+I decided then to put up a small experiment by connecting 
