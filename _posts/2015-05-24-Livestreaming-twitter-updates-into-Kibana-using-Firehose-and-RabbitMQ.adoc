@@ -11,8 +11,8 @@ I decided then to put up a small experiment by reading *Twitter* status updates 
 Ok I think it's a good idea to explain the tools and technologies I used during the experiment. They're pretty well known and quite easy to setup and understand.
 
 
-*Kibana* is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many features, tweaks, tricks and usages just like elasticsearch does.
+link:https://www.elastic.co/products/kibana[*Kibana*] is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many features, tweaks, tricks and usages just like elasticsearch does.
 
 link:https://rabbitmq.com[*RabbitMQ*] is a messaging queue system, built around Erlang and widely used for big scale projects (big data) and I would recommend to at least give it some consderation when you're developing something that needs communication between services or heavy asynchronous operations.
 
-*Firehose*
+link:https://dev.twitter.com/streaming/firehose[*Firehose*] is 
