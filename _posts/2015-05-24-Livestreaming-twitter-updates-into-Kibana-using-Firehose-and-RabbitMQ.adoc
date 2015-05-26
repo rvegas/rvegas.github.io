@@ -91,5 +91,6 @@ image:http://i.imgur.com/pxJLAwg.png[]
 ## Wrap up
 Wow! this was a long one, but oh boy wasn't it fun! There are so many details and tweaks you can perform (I have done it, it is dangerously addictive) so you get better, cleaner and more meaninful results. I hope this dev log helps you find some inspiration or at least some reason to stop being bored for a day or two.
 
+Special thanks to my colleague and super devops expert link:https://mobile.twitter.com/andonirodriguez[@andonirodriguez] for all the support, insights and ideas.
 
 Thanks for reading!
