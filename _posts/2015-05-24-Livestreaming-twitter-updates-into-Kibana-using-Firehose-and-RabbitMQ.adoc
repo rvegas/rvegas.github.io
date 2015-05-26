@@ -64,3 +64,29 @@ Now comes the fun, I created an ugly PHP script, I tried making it beautiful, bu
 https://github.com/rvegas/twitter-firehose-php
 
 If you follow the *README* you will see that you should run the twitter loader and then the consumer to feed the data into elastic.
+
+
+## Have fun with Kibana!
+
+Now you can go back to http://localhost:5601 and create an index name pattern like this:
+
+image:http://i.imgur.com/6MumxHN.png[]
+
+After that you can start creating your own graphs like so:
+
+image:http://i.imgur.com/uWeDy3J.png[]
+
+I chose a pie chart from a new search and came to this screen:
+
+image:http://i.imgur.com/jr9uL57.png[]
+
+After some tweaking with the filters and reading some documentation I could produce a really cool pie chart with the top 25 terms of the tweets being sent in the last minutes. It looks like this:
+
+image:http://i.imgur.com/sHmzkYt.png[]
+
+At the end I saved it and added it to my dashboard so it would end up like this beauty:
+
+image:http://i.imgur.com/pxJLAwg.png[]
+
+## Wrap up
+Wow! this was a long one, but oh boy wasn't it fun! There are so many details and tweaks you can perform (I have done it, it is dangerously addictive) so you get better, cleaner and more meaninful results. I hope this dev log helps you find 
