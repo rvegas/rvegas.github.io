@@ -49,9 +49,9 @@ image:https://www.rabbitmq.com/img/management/overview.png[]
 
 I strongly recommend to create a new user with the necessary permissions so you can access it from outside of the local environment. I would love to go into *RabbitMQ*'s details, tricks and experiences I've had, but I will leave that to a specific future post. So trust me on this one and create the following:
 
-* 1 exchange called tweets
+* 1 exchange called tweets of topic type
 * 2 durable queues, 1 called english-tweets, 1 called spanish-tweets
-* 2 bindings (1 per queue), 1 binds tweet.en to english-tweets, and you guess the other.
+* 2 bindings (1 per queue), 1 binds en.tweet to english-tweets, and es.tweet to spanish-tweets
 
 ### Setting up Firehose
 
@@ -61,4 +61,6 @@ Since Firehose is a public API, you really need little to set it up. Simply go t
 ## Release the hounds
 
 Now comes the fun, I created an ugly PHP script, I tried making it beautiful, but deep in my mind I said _it's php bro, you can't make it beautiful enough, ever_ so you can check it out at:
+https://github.com/rvegas/twitter-firehose-php
 
+If you follow the *README* you will see that you should run the twitter loader and then the consumer to feed the data into elastic.
