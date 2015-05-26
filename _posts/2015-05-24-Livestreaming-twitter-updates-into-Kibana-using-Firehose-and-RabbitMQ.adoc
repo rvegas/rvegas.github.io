@@ -32,3 +32,10 @@ WARNING: If you do not have elastic search running Kibana will fail to load of c
 
 TIP: I had some problems with the elasticsearch version (Kibana needs 1.4.4) but this helped me out link:https://www.elastic.co/guide/en/elasticsearch/reference/1.3/setup-upgrade.html[Rolling Upgrade for elasticsearch]
 
+After you're through this you will get to the kibana dashboard, which looks like this:
+image:http://i.imgur.com/I2SU985.png[]
+
+There is little to be done here, so let's move on.
+
+### Setting up rabbitmq
+
