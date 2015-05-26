@@ -26,4 +26,6 @@ You might think I'm an asshole for this, but seriously, just go to https://www.e
 
 image:http://i.imgur.com/osnyLwo.png[]
 
-After this, you wil go to 
+After this, just go to http://localhost:5601/
+
+WARNING: If you do not have elastic search running Kibana will fail to load of course, if you want a cool way to set it up I recomment you check link:http://ricardo.vegas[this].
