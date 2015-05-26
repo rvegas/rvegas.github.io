@@ -51,3 +51,6 @@ I strongly recommend to create a new user with the necessary permissions so you 
 
 * 1 exchange called tweets
 * 2 durable queues, 1 called english-tweets, 1 called spanish-tweets
+* 2 bindings (1 per queue), 1 binds tweet.en to english-tweets, and you guess the other.
+
+
