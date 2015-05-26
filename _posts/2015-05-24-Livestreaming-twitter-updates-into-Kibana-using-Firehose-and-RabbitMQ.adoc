@@ -53,4 +53,12 @@ I strongly recommend to create a new user with the necessary permissions so you 
 * 2 durable queues, 1 called english-tweets, 1 called spanish-tweets
 * 2 bindings (1 per queue), 1 binds tweet.en to english-tweets, and you guess the other.
 
+### Setting up Firehose
+
+Since Firehose is a public API, you really need little to set it up. Simply go to https://apps.twitter.com/ and create a new app. You will then get your app and user's tokens and secrets and whatsoever. Keep those at hand.
+
+
+## Release the hounds
+
+Now comes the fun, I created an ugly PHP script, I tried making it beautiful, but deep in my mind I said _it's php bro, you can't make it beautiful enough, ever_ so you can check it out at:
 
