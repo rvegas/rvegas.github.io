@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Livestreaming twitter updates into Kibana using Firehose and RabbitMQ - ricardo.vegas</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Livestreaming twitter updates into Kibana using Firehose and RabbitMQ">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Livestreaming twitter updates into Kibana using Firehose and RabbitMQ">
+    <meta property="og:description" content="">
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link rel="stylesheet" type="text/css" href="//ricardo.vegas/themes/uno/assets/css/uno.css?v=1.0.0" />
+
+    <link rel="canonical" href="http://ricardo.vegas/2015/05/24/Livestreaming-twitter-updates-into-Kibana-using-Firehose-and-RabbitMQ.html" />
+    
+    <meta property="og:site_name" content="ricardo.vegas" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Livestreaming twitter updates into Kibana using Firehose and RabbitMQ" />
+    <meta property="og:description" content="Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I&amp;#8217;ve been working some more with elasticsearch and discovered Kibana and..." />
+    <meta property="og:url" content="http://ricardo.vegas/2015/05/24/Livestreaming-twitter-updates-into-Kibana-using-Firehose-and-RabbitMQ.html" />
+    <meta property="article:published_time" content="2015-05-23T22:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-05-26T17:15:54.021Z" />
+    <meta property="article:tag" content="twitter" />
+    <meta property="article:tag" content="kibana" />
+    <meta property="article:tag" content="elasticsearch" />
+    <meta property="article:tag" content="php" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Livestreaming twitter updates into Kibana using Firehose and RabbitMQ" />
+    <meta name="twitter:description" content="Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I&amp;#8217;ve been working some more with elasticsearch and discovered Kibana and..." />
+    <meta name="twitter:url" content="http://ricardo.vegas/2015/05/24/Livestreaming-twitter-updates-into-Kibana-using-Firehose-and-RabbitMQ.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "ricardo.vegas",
+    "author": {
+        "@type": "Person",
+        "name": "Ricardo Vegas",
+        "image": "https://avatars.githubusercontent.com/u/5328717?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": null
+    },
+    "headline": "Livestreaming twitter updates into Kibana using Firehose and RabbitMQ",
+    "url": "http://ricardo.vegas/2015/05/24/Livestreaming-twitter-updates-into-Kibana-using-Firehose-and-RabbitMQ.html",
+    "datePublished": "2015-05-23T22:00:00.000Z",
+    "dateModified": "2015-05-26T17:15:54.021Z",
+    "keywords": "twitter,  kibana,  elasticsearch,  php",
+    "description": "Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I&amp;#8217;ve been working some more with elasticsearch and discovered Kibana and..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="ricardo.vegas" href="http://ricardo.vegas/rss" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+
+</head>
+<body class="post-template tag-twitter tag-kibana tag-elasticsearch tag-php no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <header class="panel-cover panel-cover--collapsed " >
+      <div class="panel-main">
+    
+        <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+    
+            <h1 class="panel-cover__title panel-title"><a href="http://ricardo.vegas" title="link to homepage for ricardo.vegas">ricardo.vegas</a></h1>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description">Development blog with annotations, links, images and anything I find interesting.</p>
+            <hr class="panel-cover__divider panel-cover__divider--secondary" />
+    
+            <div class="navigation-wrapper">
+    
+              <nav class="cover-navigation cover-navigation--primary">
+                <ul class="navigation">
+                  <li class="navigation__item"><a href="http://ricardo.vegas/#blog" title="link to ricardo.vegas blog" class="blog-button">Blog</a></li>
+                </ul>
+              </nav>
+    
+              
+              
+              <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+              
+              
+                  <!-- Twitter -->
+                  <li class="navigation__item">
+                    <a href="https://twitter.com/ricardovegas" title="Twitter account">
+                      <i class='icon icon-social-twitter'></i>
+                      <span class="label">Twitter</span>
+                    </a>
+                  </li>
+              
+              
+                  <!-- Github -->
+                  <li class="navigation__item">
+                    <a href="https://github.com/rvegas" title="Github account">
+                      <i class='icon icon-social-github'></i>
+                      <span class="label">Github</span>
+                    </a>
+                  </li>
+                  </li>
+              
+              
+              
+              
+                  <!-- LinkedIn -->
+                  <li class="navigation__item">
+                    <a href="https://us.linkedin.com/in/ricardovegas/en" title="LinkedIn account">
+                      <i class='icon icon-social-linkedin'></i>
+                      <span class="label">LinkedIn</span>
+                    </a>
+                  </li>
+              
+                  <!-- Email -->
+                  <li class="navigation__item">
+                    <a href="mailto:contact@ricardo.vegas" title="Email contact@ricardo.vegas">
+                      <i class='icon icon-mail'></i>
+                      <span class="label">Email</span>
+                    </a>
+                  </li>
+              
+                </ul>
+              </nav>
+              
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+        <div class="panel-cover--overlay"></div>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            
+
+  <article class="post-container post-container--single">
+
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="24 May 2015" class="post-meta__date date">24 May 2015</time> &#8226; <span class="post-meta__tags tags">on <a href="http://ricardo.vegas/tag/twitter">twitter</a>, <a href="http://ricardo.vegas/tag/kibana"> kibana</a>, <a href="http://ricardo.vegas/tag/elasticsearch"> elasticsearch</a>, <a href="http://ricardo.vegas/tag/php"> php</a></span>
+        <span class="post-meta__author author"><img src="https://avatars.githubusercontent.com/u/5328717?v=3" alt="profile image for Ricardo Vegas" class="avatar post-meta__avatar" /> by Ricardo Vegas</span>
+      </div>
+      <h1 class="post-title">Livestreaming twitter updates into Kibana using Firehose and RabbitMQ</h1>
+    </header>
+
+    <section class="post tag-twitter tag-kibana tag-elasticsearch tag-php">
+      <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I&#8217;ve been working some more with elasticsearch and discovered <a href="https://www.elastic.co/products/kibana">Kibana</a> and wow isn&#8217;t that something cool!?</p>
+</div>
+<div class="paragraph">
+<p>I decided then to put up a small experiment by reading <strong>Twitter</strong> status updates and dumping them into a elastic search collection so I could later build some graphs based on the characteristics of the tweets (language, sentiment, place, brand, user, whatever I could get).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kibana_rabbitmq_firehose">Kibana, RabbitMQ, Firehose???</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ok I think it&#8217;s a good idea to explain the tools and technologies I used during the experiment. They&#8217;re pretty well known and quite easy to setup and understand.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.elastic.co/products/kibana"><strong>Kibana</strong></a> is a visualization tool that is architected to work with <strong>elasticsearch</strong>, it can also load data from many other sources and it has many features, tweaks, tricks and usages just like elasticsearch does.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://rabbitmq.com"><strong>RabbitMQ</strong></a> is a messaging queue system, built around Erlang and widely used for big scale projects (big data) and I would recommend to at least give it some consderation when you&#8217;re developing something that needs communication between services or heavy asynchronous operations.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://dev.twitter.com/streaming/firehose"><strong>Firehose</strong></a> is a special endpoint of the Twitter Developer API. As they state "a creative use of all the other public endpoints could sastisfy the need to use this one"&#8230;&#8203; or something like that. So yes, it simply returns a <em>livestream</em> of the messages being tweeted right now in a series of keywords you query against.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_let_s_begin">Let&#8217;s Begin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So the first question I always ask myself when making this kind of experiments is : <strong><em>What do I start with?</em></strong>. Well my answer to that question is normally <strong><em>with whatever I find myself having more fun!</em></strong>. If I remember correctly, after checking out all of these available tools, the one that excited me the most was obviously <strong>Kibana</strong>, I mean, have you seen those graphs? Isn&#8217;t it awesome how many different ways are there to organize and display metrics and data? So yeah, let&#8217;s begin by setting up Kibana.</p>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_kibana">Setting up kibana</h3>
+<div class="paragraph">
+<p>You might think I&#8217;m an asshole for this, but seriously, just go to <a href="https://www.elastic.co/downloads/kibana" class="bare">https://www.elastic.co/downloads/kibana</a> and follow the instructions :)</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/osnyLwo.png" alt="osnyLwo.png"></span></p>
+</div>
+<div class="paragraph">
+<p>After this, just go to <a href="http://localhost:5601/" class="bare">http://localhost:5601/</a></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you do not have elastic search running Kibana will fail to load of course, if you want a cool way to set it up I recommend you to <a href="http://ricardo.vegas/2015/05/23/Setup-and-host-an-elasticsearch-server-on-Amazon-EC2-using-Vagrant.html">check this out</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+I had some problems with the elasticsearch version (Kibana needs 1.4.4) but this helped me out <a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.3/setup-upgrade.html">Rolling Upgrade for elasticsearch</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After you&#8217;re through this you will get to the kibana dashboard, which looks like this:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/I2SU985.png" alt="I2SU985.png"></span></p>
+</div>
+<div class="paragraph">
+<p>There is little to be done here, so let&#8217;s move on.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_rabbitmq">Setting up rabbitmq</h3>
+<div class="paragraph">
+<p>HA! Guess what? Go to <a href="https://www.rabbitmq.com/download.html">RabbitMQ downloads page</a> and choose your desired flavor, then install rabbit, and also install the management plugin by running:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>rabbitmq-plugins enable rabbitmq_management</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally go to <a href="http://localhost:15672" class="bare">http://localhost:15672</a> and you will enter the management admin (default user and pass is guest:guest).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://www.rabbitmq.com/img/management/overview.png" alt="overview.png"></span></p>
+</div>
+<div class="paragraph">
+<p>I strongly recommend to create a new user with the necessary permissions so you can access it from outside of the local environment. I would love to go into <strong>RabbitMQ</strong>'s details, tricks and experiences I&#8217;ve had, but I will leave that to a specific future post. So trust me on this one and create the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1 exchange called tweets of topic type</p>
+</li>
+<li>
+<p>2 durable queues, 1 called english-tweets, 1 called spanish-tweets</p>
+</li>
+<li>
+<p>2 bindings (1 per queue), 1 binds en.tweet to english-tweets, and es.tweet to spanish-tweets</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_firehose">Setting up Firehose</h3>
+<div class="paragraph">
+<p>Since Firehose is a public API, you really need little to set it up. Simply go to <a href="https://apps.twitter.com/" class="bare">https://apps.twitter.com/</a> and create a new app. You will then get your app and user&#8217;s tokens and secrets and whatsoever. Keep those at hand.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_the_hounds">Release the hounds</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now comes the fun, I created an ugly PHP script, I tried making it beautiful, but deep in my mind I said <em>it&#8217;s php bro, you can&#8217;t make it beautiful enough, ever</em> so you can check it out at:
+<a href="https://github.com/rvegas/twitter-firehose-php" class="bare">https://github.com/rvegas/twitter-firehose-php</a></p>
+</div>
+<div class="paragraph">
+<p>If you follow the <strong>README</strong> you will see that you should run the twitter loader and then the consumer to feed the data into elastic.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_have_fun_with_kibana">Have fun with Kibana!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now you can go back to <a href="http://localhost:5601" class="bare">http://localhost:5601</a> and create an index name pattern like this:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/6MumxHN.png" alt="6MumxHN.png"></span></p>
+</div>
+<div class="paragraph">
+<p>After that you can start creating your own graphs like so:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/uWeDy3J.png" alt="uWeDy3J.png"></span></p>
+</div>
+<div class="paragraph">
+<p>I chose a pie chart from a new search and came to this screen:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/jr9uL57.png" alt="jr9uL57.png"></span></p>
+</div>
+<div class="paragraph">
+<p>After some tweaking with the filters and reading some documentation I could produce a really cool pie chart with the top 25 terms of the tweets being sent in the last minutes. It looks like this:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/sHmzkYt.png" alt="sHmzkYt.png"></span></p>
+</div>
+<div class="paragraph">
+<p>At the end I saved it and added it to my dashboard so it would end up like this beauty:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://i.imgur.com/pxJLAwg.png" alt="pxJLAwg.png"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wrap_up">Wrap up</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wow! this was a long one, but oh boy wasn&#8217;t it fun! There are so many details and tweaks you can perform (I have done it, it is dangerously addictive) so you get better, cleaner and more meaninful results. I hope this dev log helps you find some inspiration or at least some reason to stop being bored for a day or two.</p>
+</div>
+<div class="paragraph">
+<p>Thanks for reading!</p>
+</div>
+</div>
+</div>
+    </section>
+
+  </article>
+
+
+
+
+            <footer class="footer">
+                <span class="footer__copyright">&copy; 2015. All rights reserved.</span>
+                <span class="footer__copyright"><a href="http://uno.daleanthony.com" title="link to page for Uno Ghost theme">Uno theme</a> by <a href="http://daleanthony.com" title="link to website for Dale-Anthony">Dale-Anthony</a></span>
+                <span class="footer__copyright">Proudly published with <a href="http://hubpress.io" title="link to Hubpress website">Hubpress</a></span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();      
+      </script>
+
+    <script type="text/javascript" src="//ricardo.vegas/themes/uno/assets/js/main.js?v=1.0.0"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-55523215-2', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+</body>
+</html>
