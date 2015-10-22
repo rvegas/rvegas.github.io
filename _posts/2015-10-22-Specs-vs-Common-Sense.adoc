@@ -15,7 +15,7 @@ that's pretty unfair. But I'm not an expert in that field, or actually any field
 really got my attention were the comments that followed this post in reddit by [small]#https://www.reddit.com/user/Evilsqirrel[Evilsqirrel]#
 :
 
-[source]
+[quote]
 I actually just recently ran into an issue with my programming course where they knocked off 10 
 points because my output was 1 cent off what their "desired" output was, regardless of the fact 
 that my program was actually rounding properly instead of truncating, making it more accurate 
@@ -24,7 +24,7 @@ than it actually was. I never hated a teacher so much in my life.
 
 To which somebody named [small]#https://www.reddit.com/user/qwertyslayer[qwertyslayer]# *replied*:
 
-[source]
+[quote]
 I've got bad, bad news for you if you want to be a software engineer that works for money.
 
 
@@ -65,7 +65,8 @@ For a *final statement* I will leave here another comment from the thread by [sm
 with this topic by explaining a real life example of how common sense might not make your life easier 
 all the time:
 
-....
+[quote]
+____
 Hey, former dev at a bank here.
 
 Being "better" isn't strictly right. This isn't just your professor being an asshole, I was on an actual 
@@ -81,4 +82,4 @@ represented (across the full range of clients for this tool) a multi-million dol
 still supposed to directly do it wrong.
 
 TL:DR it's not just your professor, sometimes it's your job to do it specifically wrong
-....
+____
