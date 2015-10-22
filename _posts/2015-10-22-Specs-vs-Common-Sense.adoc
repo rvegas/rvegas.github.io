@@ -69,8 +69,10 @@ all the time:
 ____
 Hey, former dev at a bank here.
 
+
 Being "better" isn't strictly right. This isn't just your professor being an asshole, I was on an actual 
 project that had pretty much this exact same problem.
+
 
 Project involved effectively automating some collateral value calculations. We were given a spreadsheet 
 with some sample values and were given the maths and were told to match output. We didn't bother to check 
@@ -80,6 +82,7 @@ starting at 3 am before we figured out that having "wrong" (truncated) numbers w
 something negotiated in the contract underlying this particular calculation. In other words, even though it 
 represented (across the full range of clients for this tool) a multi-million dollar disadvantage, we were 
 still supposed to directly do it wrong.
+
 
 TL:DR it's not just your professor, sometimes it's your job to do it specifically wrong
 ____
