@@ -22,7 +22,7 @@ that my program was actually rounding properly instead of truncating, making it 
 than it actually was. I never hated a teacher so much in my life.
 ____
 
-
+  
 
 To which somebody replied:
 
@@ -31,7 +31,7 @@ ____
 I've got bad, bad news for you if you want to be a software engineer that works for money.
 ____
 
-[%hardbreaks]
+  
 
 He can't be more right! I've gone through similar situations during my career, in many projects 
 and in very different scales. What I've really learned is that you have to choose your battles, 
