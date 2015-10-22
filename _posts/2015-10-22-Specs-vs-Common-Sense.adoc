@@ -53,5 +53,5 @@ many areas (disorganized, contradictions, etc). In such cases it's always good, 
 start your own documentation stack, or your own specification in a better format and language. For 
 these cases I've recently found that my colleague's 
 link:https://twitter.com/_jameswatts_[@_jameswatts_] 
-specification for *XHTTP* is really well outlined and it's a nice starting point: 
+specification for *XHTTP* is really well outlined and it's a nice starting point:  
 link:http://www.xhttp.org/specification[XHTTP Specification]
