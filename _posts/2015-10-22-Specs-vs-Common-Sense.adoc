@@ -14,7 +14,7 @@ I'm not writing a post against any educational system, I mean the kid got a D wi
 that's pretty unfair. But I'm not an expert in that field, or actually any field to begin with. What 
 really got my attention were the comments that followed this post in reddit:
 
-[quote, Some guy on reddit]
+[quote, Some guy on reddit, 'https://www.reddit.com/user/Evilsqirrel[Evilsqirrel]']
 ____
 I actually just recently ran into an issue with my programming course where they knocked off 10 
 points because my output was 1 cent off what their "desired" output was, regardless of the fact 
@@ -24,7 +24,7 @@ ____
 
 To which somebody replied:
 
-[quote, Some other guy on reddit]
+[quote, Some other guy on reddit, 'https://www.reddit.com/user/qwertyslayer[qwertyslayer]']
 ____
 I've got bad, bad news for you if you want to be a software engineer that works for money.
 ____
@@ -66,9 +66,7 @@ For a final statement I will leave here another comment from the thread that rea
 with this topic by explaining a real life example of how common sense might not make your life easier 
 all the time:
 
-To which somebody replied:
-
-[quote, Some other guy on reddit]
+[quote, Former Bank Employee, 'https://www.reddit.com/user/ituralde_[ituralde_]']
 ____
 Hey, former dev at a bank here.
 
