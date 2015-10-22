@@ -28,3 +28,16 @@ To which somebody replied:
 ____
 I've got bad, bad news for you if you want to be a software engineer that works for money.
 ____
+
+He can't be more right! I've gone through similar situations during my career, in many projects 
+and in very different scales. What I've really learned is that you have to choose your battles, 
+you're paid for your expertise and for your skills, my problem is that I have amazing skills 
+to detect this kind of problems (The client wants something that will eventually lead you and 
+him to hours of frustration and bug hunting due to bad approaches and rules that don't follow 
+common sense), my advantage is that I have good ways to work this through by communication and 
+negotiation (Sometimes the client really wants that feature that will shut his business down 
+and it will be extremely hard to convince him otherwise). 
+
+So what do I recommend: don't be an asshole and talk about it with your client/boss since it will 
+free you from taking the 2 potentially wrong decisions: 
+1. You fix it and keep your mouth shut, then it will explode in your face 
