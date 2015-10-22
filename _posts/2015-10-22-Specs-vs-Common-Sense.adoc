@@ -1,6 +1,6 @@
 # Specs vs Common Sense
 
-So I was browsing through http://reddit.com[reddit] and I came across this picture: 
+So I was browsing through http://reddit.com[reddit] and came across this picture: 
 
 image::http://i.imgur.com/KtKNmXG.png[AssholeTeacher,640,400,role="center"]
 [small]#source: https://www.reddit.com/r/pics/comments/3pmyh3/teachers_logic_in_grading_math/[reddit]#
