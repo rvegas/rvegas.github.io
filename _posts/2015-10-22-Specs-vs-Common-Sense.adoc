@@ -46,4 +46,9 @@ it was primordial for the product. You fix it back, it explodes on his face and 
 solution that was the ideal one to begin with.
 2. You do it just as it's detailed in the specifications and then it explodes in your client's face, 
 the client loses money/time/users and you simply say 'it was written here' and I said nothing about 
-it because I'm 
+it because I didn't have to.
+
+Anyways, you can also have the case of having specs that do not make sense (or common sense) in 
+many areas (disorganized, contradictions, etc). In such cases it's always good, in my opinion, to 
+start your own documentation stack, or your own specification in a better format and language. For 
+these cases I've recently found that my colleague's https://twitter.com/_jameswatts_[@_jameswatts_]
