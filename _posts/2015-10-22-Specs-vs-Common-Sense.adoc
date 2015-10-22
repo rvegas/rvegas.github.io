@@ -21,7 +21,7 @@ points because my output was 1 cent off what their "desired" output was, regardl
 that my program was actually rounding properly instead of truncating, making it more accurate 
 than it actually was. I never hated a teacher so much in my life.
 ____
-
+<<<
   
 
 To which somebody replied:
@@ -29,7 +29,8 @@ To which somebody replied:
 [quote, Some other guy on reddit, 'https://www.reddit.com/user/qwertyslayer[qwertyslayer]']
 ____
 I've got bad, bad news for you if you want to be a software engineer that works for money.
-
+____
+<<<
   
 
 He can't be more right! I've gone through similar situations during my career, in many projects 
