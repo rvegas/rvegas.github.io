@@ -38,6 +38,12 @@ common sense), my advantage is that I have good ways to work this through by com
 negotiation (Sometimes the client really wants that feature that will shut his business down 
 and it will be extremely hard to convince him otherwise). 
 
-So what do I recommend: don't be an asshole and talk about it with your client/boss since it will 
-free you from taking the 2 potentially wrong decisions: 
-1. You fix it and keep your mouth shut, then it will explode in your face 
+So what do I recommend: don't be an asshole. When some points in the specs doesn't follow common 
+sense or has some technical underlying issue -> Go and talk about it with your client/boss since 
+it will free you from the suffering caused by taking one of the 2 potentially wrong decisions: 
+1. You fix it and keep your mouth shut, then it will explode in your face when he tells you that 
+it was primordial for the product. You fix it back, it explodes on his face and then you find a 3rd 
+solution that was the ideal one to begin with.
+2. You do it just as it's detailed in the specifications and then it explodes in your client's face, 
+the client loses money/time/users and you simply say 'it was written here' and I said nothing about 
+it because I'm 
