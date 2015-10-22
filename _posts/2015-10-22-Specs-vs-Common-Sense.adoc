@@ -1,0 +1,30 @@
+# Specs vs Common Sense
+
+So I was reading through http://reddit.com[reddit] during my lunch break at work and I came 
+accross this picture: 
+
+image::http://i.imgur.com/KtKNmXG.png[AssholeTeacher,800,600,role="center"]
+[small]#source: https://www.reddit.com/r/pics/comments/3pmyh3/teachers_logic_in_grading_math/[reddit]#
+
+Apparently the kid did not follow the specific method the teacher has taught the class during 
+the past weeks, presumably he wants the students to have a huge loathing against commutative 
+addition or to common sense, or even worse: *creative and different thinking*.
+
+I'm not writing a post against any educational system, I mean the kid got a D with no wrong answers, 
+that's pretty unfair. But I'm not an expert in that field, or actually any field to begin with. What 
+really got my attention were the comments that followed this post in reddit:
+
+[quote, Some guy on reddit]
+____
+I actually just recently ran into an issue with my programming course where they knocked off 10 
+points because my output was 1 cent off what their "desired" output was, regardless of the fact 
+that my program was actually rounding properly instead of truncating, making it more accurate 
+than it actually was. I never hated a teacher so much in my life.
+____
+
+To which somebody replied:
+
+[quote, Some other guy on reddit]
+____
+I've got bad, bad news for you if you want to be a software engineer that works for money.
+____
