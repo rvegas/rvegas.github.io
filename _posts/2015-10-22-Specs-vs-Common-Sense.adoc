@@ -53,5 +53,38 @@ many areas (disorganized, contradictions, etc). In such cases it's always good, 
 start your own documentation stack, or your own specification in a better format and language. For 
 these cases I've recently found that my colleague's 
 link:https://twitter.com/_jameswatts_[@_jameswatts_] 
-specification for *XHTTP* is really well outlined and it's a nice starting point:  
+specification for *XHTTP* is really well outlined and it's a nice starting point: 
+
 link:http://www.xhttp.org/specification[XHTTP Specification]
+
+What was the nicest decision the kid should've made that day during that exam? Probably the one he 
+took, he went ahead and found a solution for a problem that was given to him. Probably his parents 
+will pay a visit to the school and hopefully this teacher stops killing kid's motivation to learn 
+and specially learn math.
+
+For a final statement I will leave here another comment from the thread that really rounds things up 
+with this topic by explaining a real life example of how common sense might not make your life easier 
+all the time:
+
+To which somebody replied:
+
+[quote, Some other guy on reddit]
+____
+Hey, former dev at a bank here.
+
+Being "better" isn't strictly right. This isn't just your professor being an asshole, I was on an actual 
+project that had pretty much this exact same problem.
+
+
+Project involved effectively automating some collateral value calculations. We were given a spreadsheet 
+with some sample values and were given the maths and were told to match output. We didn't bother to check 
+that the formatting rules truncated at certain point (at the millions). We get into UAT and the business 
+test team throws a fit because their numbers aren't matching up. 6 hours of stepping through the math process 
+starting at 3 am before we figured out that having "wrong" (truncated) numbers was an important aspect of 
+something negotiated in the contract underlying this particular calculation. In other words, even though it 
+represented (across the full range of clients for this tool) a multi-million dollar disadvantage, we were 
+still supposed to directly do it wrong.
+
+
+TL:DR it's not just your professor, sometimes it's your job to do it specifically wrong
+____
