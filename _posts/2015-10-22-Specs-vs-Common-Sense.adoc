@@ -32,7 +32,7 @@ I've got bad, bad news for you if you want to be a software engineer that works 
 ____
 
 <<<
-  
+
 
 He can't be more right! I've gone through similar situations during my career, in many projects 
 and in very different scales. What I've really learned is that you have to choose your battles, 
