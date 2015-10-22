@@ -1,7 +1,7 @@
 # Specs vs Common Sense
 
 So I was reading through http://reddit.com[reddit] during my lunch break at work and I came 
-accross this picture: 
+across this picture: 
 
 image::http://i.imgur.com/KtKNmXG.png[AssholeTeacher,640,400,role="center"]
 [small]#source: https://www.reddit.com/r/pics/comments/3pmyh3/teachers_logic_in_grading_math/[reddit]#
