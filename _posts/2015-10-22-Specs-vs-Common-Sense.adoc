@@ -1,6 +1,7 @@
 # Specs vs Common Sense
 
-So I was browsing through http://reddit.com[reddit] and came across this picture: 
+So I was reading through http://reddit.com[reddit] during my lunch break at work and I came 
+across this picture: 
 
 image::http://i.imgur.com/KtKNmXG.png[AssholeTeacher,640,400,role="center"]
 [small]#source: https://www.reddit.com/r/pics/comments/3pmyh3/teachers_logic_in_grading_math/[reddit]#
@@ -11,20 +12,23 @@ addition or to common sense, or even worse: *creative and different thinking*.
 
 I'm not writing a post against any educational system, I mean the kid got a D with no wrong answers, 
 that's pretty unfair. But I'm not an expert in that field, or actually any field to begin with. What 
-really got my attention were the comments that followed this post in reddit by [small]#https://www.reddit.com/user/Evilsqirrel[Evilsqirrel]#
-:
+really got my attention were the comments that followed this post in reddit:
 
-[quote]
+[source]
 I actually just recently ran into an issue with my programming course where they knocked off 10 
 points because my output was 1 cent off what their "desired" output was, regardless of the fact 
 that my program was actually rounding properly instead of truncating, making it more accurate 
 than it actually was. I never hated a teacher so much in my life.
 
+[small]#- By some guy on reddit, https://www.reddit.com/user/Evilsqirrel[Evilsqirrel]#
 
-To which somebody named [small]#https://www.reddit.com/user/qwertyslayer[qwertyslayer]# *replied*:
 
-[quote]
+To which somebody *replied*:
+
+[source]
 I've got bad, bad news for you if you want to be a software engineer that works for money.
+
+[small]#- By some other guy on reddit, https://www.reddit.com/user/qwertyslayer[qwertyslayer]#
 
 
 He can't be more right! I've gone through similar situations during my career, in many projects 
@@ -60,19 +64,14 @@ took, he went ahead and found a solution for a problem that was given to him. Pr
 will pay a visit to the school and hopefully this teacher stops killing kid's motivation to learn 
 and specially learn math.
 
-For a *final statement* I will leave here another comment from the thread by [small]#https://www.reddit.com/user/ituralde_[ituralde_]# that really rounds things up 
+For a *final statement* I will leave here another comment from the thread that really rounds things up 
 with this topic by explaining a real life example of how common sense might not make your life easier 
 all the time:
 
-[quote]
-____
+[source]
 Hey, former dev at a bank here.
-
-
 Being "better" isn't strictly right. This isn't just your professor being an asshole, I was on an actual 
 project that had pretty much this exact same problem.
-
-
 Project involved effectively automating some collateral value calculations. We were given a spreadsheet 
 with some sample values and were given the maths and were told to match output. We didn't bother to check 
 that the formatting rules truncated at certain point (at the millions). We get into UAT and the business 
@@ -81,7 +80,6 @@ starting at 3 am before we figured out that having "wrong" (truncated) numbers w
 something negotiated in the contract underlying this particular calculation. In other words, even though it 
 represented (across the full range of clients for this tool) a multi-million dollar disadvantage, we were 
 still supposed to directly do it wrong.
-
-
 TL:DR it's not just your professor, sometimes it's your job to do it specifically wrong
-____
+
+[small]#- By a former Bank Employee, https://www.reddit.com/user/ituralde_[ituralde_]#
