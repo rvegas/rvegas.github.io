@@ -1,18 +1,16 @@
-# Goodbye Flask, hello aiohttp
+# Goodbye Flask, Hello aiohttp
 
 :hp-tags: api, flask, python, python3
 
-For the past years, I've been working mostly on Microservices, Architecture and API development. I've been through many tools and frameworks under PHP, Python and Scala. I cannot state which is the best way to go, but so far my favorite way to 
+For the past years, I've been working mostly on Microservices, Architecture and API development. I've been through many tools and frameworks under PHP, Python and Scala. I cannot state which is the best way to go, but so far my default configuration is *Python 3.5* with *virtualenv*.
 
-## Kibana, RabbitMQ, Firehose???
+## Why Python?
 
-Ok I think it's a good idea to explain the tools and technologies I used during the experiment. They're pretty well known and quite easy to setup and understand.
+I'm not one to defend *Python*(3.5+) over other languages, each project has its own problems that can be solved in many ways. But one of the main obstacles that I tend to find is the development setup and its differences with the production setup.
 
-link:https://www.elastic.co/products/kibana[*Kibana*] is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many features, tweaks, tricks and usages just like elasticsearch does.
+Regarding provisioning and project environments there are many solutions out there (link:docker.com[Docker], link:vagrang.com[Vagrant], link:http://mesos.apache.org/[Apache Mesos], etc) but I've found that Python's link:http://docs.python-guide.org/en/latest/dev/virtualenvs/[Virtualenv] is one of the most versatiles tools for this particular problem.
 
-link:https://rabbitmq.com[*RabbitMQ*] is a messaging queue system, built around Erlang and widely used for big scale projects (big data) and I would recommend to at least give it some consderation when you're developing something that needs communication between services or heavy asynchronous operations.
 
-link:https://dev.twitter.com/streaming/firehose[*Firehose*] is a special endpoint of the Twitter Developer API. As they state "a creative use of all the other public endpoints could sastisfy the need to use this one"... or something like that. So yes, it simply returns a _livestream_ of the messages being tweeted right now in a series of keywords you query against.
 
 ## Let's Begin
 
