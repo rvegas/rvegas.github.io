@@ -1,0 +1,39 @@
+# Goodbye Flask, hello aiohttp
+
+:hp-tags: api, flask, python, python3
+
+Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I've been working some more with elasticsearch and discovered link:https://www.elastic.co/products/kibana[Kibana] and wow isn't that something cool!?
+
+I decided then to put up a small experiment by reading *Twitter* status updates and dumping them into a elastic search collection so I could later build some graphs based on the characteristics of the tweets (language, sentiment, place, brand, user, whatever I could get).
+
+## Kibana, RabbitMQ, Firehose???
+
+Ok I think it's a good idea to explain the tools and technologies I used during the experiment. They're pretty well known and quite easy to setup and understand.
+
+link:https://www.elastic.co/products/kibana[*Kibana*] is a visualization tool that is architected to work with *elasticsearch*, it can also load data from many other sources and it has many features, tweaks, tricks and usages just like elasticsearch does.
+
+link:https://rabbitmq.com[*RabbitMQ*] is a messaging queue system, built around Erlang and widely used for big scale projects (big data) and I would recommend to at least give it some consderation when you're developing something that needs communication between services or heavy asynchronous operations.
+
+link:https://dev.twitter.com/streaming/firehose[*Firehose*] is a special endpoint of the Twitter Developer API. As they state "a creative use of all the other public endpoints could sastisfy the need to use this one"... or something like that. So yes, it simply returns a _livestream_ of the messages being tweeted right now in a series of keywords you query against.
+
+## Let's Begin
+
+So the first question I always ask myself when making this kind of experiments is : *_What do I start with?_*. Well my answer to that question is normally *_with whatever I find myself having more fun!_*. If I remember correctly, after checking out all of these available tools, the one that excited me the most was obviously *Kibana*, I mean, have you seen those graphs? Isn't it awesome how many different ways are there to organize and display metrics and data? So yeah, let's begin by setting up Kibana.
+
+### Setting up kibana
+
+You might think I'm an asshole for this, but seriously, just go to https://www.elastic.co/downloads/kibana and follow the instructions :)
+
+image:http://i.imgur.com/osnyLwo.png[]
+
+After this, just go to http://localhost:5601/
+
+WARNING: If you do not have elastic search running Kibana will fail to load of course, if you want a cool way to set it up I recommend you to link:http://ricardo.vegas/2015/05/23/Setup-and-host-an-elasticsearch-server-on-Amazon-EC2-using-Vagrant.html[check this out].
+
+TIP: I had some problems with the elasticsearch version (Kibana needs 1.4.4) but this helped me out link:https://www.elastic.co/guide/en/elasticsearch/reference/1.3/setup-upgrade.html[Rolling Upgrade for elasticsearch]
+
+After you're through this you will get to the kibana dashboard, which looks like this:
+
+image:http://i.imgur.com/I2SU985.png[]
+
+There is little to be done here, so let's mov
