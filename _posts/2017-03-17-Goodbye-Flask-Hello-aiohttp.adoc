@@ -10,6 +10,14 @@ I'm not one to defend *Python*(3.5+) over other languages, each project has its 
 
 Regarding provisioning and project environments there are many solutions out there (link:docker.com[Docker], link:vagrang.com[Vagrant], link:http://mesos.apache.org/[Apache Mesos], etc) but I've found that Python's link:http://docs.python-guide.org/en/latest/dev/virtualenvs/[Virtualenv] is one of the most versatiles tools for this particular problem.
 
+The main issue that Python and virtualenv tend to solve for me in a seamless way is the very well known *dependency hell*. It can easily be achieved by running:
+
+....
+sudo easy_install pip
+pip install virtualenv
+virtualenv name_of_virtualenv -p python3
+....
+
 
 
 ## Let's Begin
