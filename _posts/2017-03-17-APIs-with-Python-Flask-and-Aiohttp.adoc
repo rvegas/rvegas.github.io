@@ -1,0 +1,53 @@
+# APIs with Python: Flask and Aiohttp
+
+:hp-tags: api, flask, python, python3
+
+For the past years, I've been working mostly on Microservices, Architecture and API development. I've been through many tools and frameworks under PHP, Python and Scala. I cannot state which is the best way to go, but so far my default configuration is *Python 3.5* with *virtualenv*.
+
+## Why Python?
+
+I'm not one to defend *Python*(3.5+) over other languages, each project has its own problems that can be solved in many ways. But one of the main obstacles that I tend to find is the development setup and its differences with the production setup.
+
+Regarding provisioning and project environments there are many solutions out there (link:docker.com[Docker], link:vagrang.com[Vagrant], link:http://mesos.apache.org/[Apache Mesos], etc) but I've found that Python's link:http://docs.python-guide.org/en/latest/dev/virtualenvs/[Virtualenv] is one of the most versatiles tools for this particular problem.
+
+The main issue that Python and virtualenv tend to solve for me in a seamless way is the very well known *dependency hell*. It can easily be achieved by running:
+
+....
+sudo easy_install pip
+pip install virtualenv
+virtualenv name_of_virtualenv -p python3
+....
+
+So the first line gets you `pip` in case you didn't have that, you can survive without it, but it's combination with `virtualenv` is great in my opinion. Then you install `virtualenv` per sè. And finally what the third line does is creating a directory called `name_of_virtualenv` in your current directory which has all the basic "Environment" in order for you to install Python modules and run scripts as desired without compromising your system.
+
+Once the `virtualenv` is created you'll need to activate it via:
+....
+source name_of_virtualenv/bin/activate
+....
+
+So if everything is correct you should now have a `(name_of_virtualenv)` string prepended to your bash; this means that the virtual environment is active and any dependency installed via `pip` will remain inside of it, avoiding any effects in your main system. If you wish to deactivate the virtual environment, simply run:
+....
+deactivate
+....
+
+## Python webservers
+
+So the first question I always ask myself when making this kind of experiments is : *_What do I start with?_*. Well my answer to that question is normally *_with whatever I find myself having more fun!_*. If I remember correctly, after checking out all of these available tools, the one that excited me the most was obviously *Kibana*, I mean, have you seen those graphs? Isn't it awesome how many different ways are there to organize and display metrics and data? So yeah, let's begin by setting up Kibana.
+
+### Setting up kibana
+
+You might think I'm an asshole for this, but seriously, just go to https://www.elastic.co/downloads/kibana and follow the instructions :)
+
+image:http://i.imgur.com/osnyLwo.png[]
+
+After this, just go to http://localhost:5601/
+
+WARNING: If you do not have elastic search running Kibana will fail to load of course, if you want a cool way to set it up I recommend you to link:http://ricardo.vegas/2015/05/23/Setup-and-host-an-elasticsearch-server-on-Amazon-EC2-using-Vagrant.html[check this out].
+
+TIP: I had some problems with the elasticsearch version (Kibana needs 1.4.4) but this helped me out link:https://www.elastic.co/guide/en/elasticsearch/reference/1.3/setup-upgrade.html[Rolling Upgrade for elasticsearch]
+
+After you're through this you will get to the kibana dashboard, which looks like this:
+
+image:http://i.imgur.com/I2SU985.png[]
+
+There is little to be done here, so let's mov
