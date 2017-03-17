@@ -2,9 +2,7 @@
 
 :hp-tags: api, flask, python, python3
 
-Last time I wrote a small guide or actually a log of what it took me to build a elasticsearch cluster using vagrant and puphet. Since then I've been working some more with elasticsearch and discovered link:https://www.elastic.co/products/kibana[Kibana] and wow isn't that something cool!?
-
-I decided then to put up a small experiment by reading *Twitter* status updates and dumping them into a elastic search collection so I could later build some graphs based on the characteristics of the tweets (language, sentiment, place, brand, user, whatever I could get).
+For the past years, I've been working mostly on Microservices, Architecture and API development. I've been through many tools and frameworks under PHP, Python and Scala. I cannot state which is the best way to go, but so far my favorite way to 
 
 ## Kibana, RabbitMQ, Firehose???
 
