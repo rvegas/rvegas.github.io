@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Date');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+		[new Date(2017, 04, 04),92.5],
+		[new Date(2017, 04, 12),90.6],
+		[new Date(2017, 04, 17),89.9],
+		[new Date(2017, 04, 24),90],
+		[new Date(2017, 05, 01),90.2],
+		[new Date(2017, 05, 08),89.8],
+		[new Date(2017, 05, 22),89.9],
+		[new Date(2017, 05, 29),90.6],
+		[new Date(2017, 06,  05),89.4],
+		[new Date(2017, 06,  12),88.8],
+		[new Date(2017, 06,  18),88.6],
+		[new Date(2017, 07,  11),86.4],
+		[new Date(2017, 07,  24),86.4],
+		[new Date(2017, 07,  31),86.4],
+		[new Date(2017, 08,  07),88.3],
+		[new Date(2017, 08,  14),86.4],
+		[new Date(2017, 08,  21),86.4],
+		[new Date(2017, 08,  28),85.8]        
+	]);
+
+        var images = [
+		'https://i.imgur.com/QKJUIAq.png',
+		'https://i.imgur.com/er5Rdd2.png',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+		'http://i.imgur.com/ecBYOP2.jpg',
+		'https://i.imgur.com/xKItOkn.png',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+		'https://i.imgur.com/J56p6y6.png',
+		'https://i.imgur.com/WlYEHYB.png',
+		'https://i.imgur.com/fjlTNuL.png',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+		'http://i.imgur.com/A3SFFgi.jpg',
+		'https://i.imgur.com/nfxjrDq.png',
+		'https://i.imgur.com/Yr976rN.png',
+		'https://i.imgur.com/wZ5Wmkx.png',
+		'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=',
+	]
+	// Set chart options
+        var options = {'title':'Wchart',
+                       'width':900,
+                       'height':400};
+ 
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        function selectHandler(e) {
+          if (e.row != null) {
+            document.getElementById("image").src = images[e.row];
+          }
+        }
+
+        google.visualization.events.addListener(chart, 'onmouseover', selectHandler);    
+        chart.draw(data, options);
+      }
+
+    </script>
+  </head>
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div" style="width:900; height:400"></div>
+    <div id="image_div">
+		<img id="image"
+			src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8Xw8AAoMBgDTD2qgAAAAASUVORK5CYII=" 
+			width="400" 
+			style="position:fixed; top:0; left: 900px"/>
+    </div>
+  </body>
+</html>
